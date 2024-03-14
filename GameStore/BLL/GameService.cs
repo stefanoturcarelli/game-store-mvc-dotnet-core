@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using DAL;
 using Entities.Entities;
+using Entities.Entities.DTO.GameFilter;
 
 namespace BLL
 {
@@ -15,6 +16,11 @@ namespace BLL
         public List<Game> GetAllGamesService()
         {
             return gameRepository.GetAllGamesRepository();
+        }
+
+        public List<Game> GetAllGamesByFilterService(IGameFilter gameFilter)
+        {
+            return gameRepository.GetAllGamesByFilterRepository(gameFilter);
         }
 
     }
