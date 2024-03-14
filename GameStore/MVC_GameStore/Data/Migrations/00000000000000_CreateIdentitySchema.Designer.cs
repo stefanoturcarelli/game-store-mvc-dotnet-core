@@ -9,7 +9,7 @@ using System;
 
 namespace MVC_GameStore.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(Entities.Context.GameStoreContext))]
     [Migration("00000000000000_CreateIdentitySchema")]
     partial class CreateIdentitySchema
     {
