@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Entities.Entities;
 using Entities.Context;
+using Entities.Entities.DTO.GameFilter;
 
 namespace DAL
 {
@@ -16,6 +17,11 @@ namespace DAL
         public List<Game> GetAllGamesRepository()
         {
             return gameStoreContext.Games.ToList();
+        }
+
+        public List<Game> GetAllGamesByFilterRepository(IGameFilter gameFilter)
+        {
+            return gameFilter.Filter(gameStoreContext.Games).ToList();
         }
     }
 }
