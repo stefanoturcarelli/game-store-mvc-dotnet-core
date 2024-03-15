@@ -20,12 +20,6 @@
                         </a>
                     </h1>
                     <ul>
-                        @if (ViewContext.RouteData.Values["action"] != null && !ViewContext.RouteData.Values["action"].ToString().Equals("Index", StringComparison.OrdinalIgnoreCase))
-                        {
-                            <li>
-                                <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                        }
                         <li>
                             <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
