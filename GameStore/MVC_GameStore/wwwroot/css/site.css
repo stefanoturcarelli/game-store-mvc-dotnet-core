@@ -136,3 +136,160 @@ a {
     margin-inline: auto;
     box-sizing: border-box;
 }
+
+/* Custom styles -------------------------------------------------------------*/
+
+html {
+    font-size: 62.5%;
+}
+
+header,
+body,
+main,
+footer,
+nav{
+    background-color: #1e1e1e !important;
+}
+
+img {
+    max-width: 25rem;
+    height: auto;
+    border-radius: 1.2rem;
+}
+
+    img:hover {
+        opacity: 0.8;
+    }
+
+.categories-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 1.5rem 3.2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.6rem;
+    margin: 0.4rem 0.2rem;
+    cursor: pointer;
+    border-radius: 1.2rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+.hero-banner-section {
+    background-image: url('../lib/far-horizon-video-1j23c.png');
+    background-size: cover;
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+.hero-banner-container {
+    padding: 12rem 0;
+}
+
+.hero-banner-section,
+.about-us-section,
+.categories-section {
+    padding: 2rem 0;
+}
+
+h1,
+h2,
+h3 {
+    color: #fff;
+}
+
+h2 {
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.shop-now {
+    color: #4CAF50;
+    font-size: 1.6rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .shop-now:hover {
+        text-decoration: underline;
+    }
+
+h3 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tagline {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.platform-name {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    background-color: #000000;
+    padding: 2rem 0;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+    nav ul {
+        display: flex;
+    }
+
+        nav ul li {
+            list-style: none;
+            margin-right: 2rem;
+        }
+
+            nav ul li a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 2rem;
+            }
+
+                nav ul li a:hover {
+                    text-decoration: underline;
+                }
+
+
+footer {
+    background-color: #000000;
+    padding: 2rem 0;
+    text-align: center;
+    color: #fff;
+}
+
+    footer p {
+        font-size: 1.6rem;
+    }
