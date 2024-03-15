@@ -17,5 +17,9 @@ namespace DAL
         {
             return gameStoreContext.Publishers.ToList();
         }
+        public Publisher? GetPublisherByIdRepository(int PublisherId)
+        {
+            return gameStoreContext.Publishers.Where(x => x.PublisherId == PublisherId).FirstOrDefault();
+        }
     }
 }

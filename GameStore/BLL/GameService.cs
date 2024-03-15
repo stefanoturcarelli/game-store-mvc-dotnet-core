@@ -17,6 +17,10 @@ namespace BLL
         {
             return gameRepository.GetAllGamesRepository();
         }
+        public Game? GetGameByIdService(int GameId)
+        {
+            return gameRepository.GetGameByIdRepository(GameId);
+        }
 
         public List<Game> GetAllGamesByFilterService(IGameFilter gameFilter)
         {

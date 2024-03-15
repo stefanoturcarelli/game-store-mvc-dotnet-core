@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using DAL;
+using Entities.Context;
 using Entities.Entities;
 
 namespace BLL
@@ -16,6 +17,9 @@ namespace BLL
         {
             return publisherRepository.GetAllPublishersRepository();
         }
-
+        public Publisher? GetPublisherByIdService(int PublisherId)
+        {
+            return publisherRepository.GetPublisherByIdRepository(PublisherId);
+        }
     }
 }

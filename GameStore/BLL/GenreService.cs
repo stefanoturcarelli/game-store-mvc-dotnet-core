@@ -16,6 +16,9 @@ namespace BLL
         {
             return genreRepository.GetAllGenresRepository();
         }
-
+        public Genre? GetGenreByIdService(int GenreId)
+        {
+            return genreRepository.GetGenreByIdRepository(GenreId);
+        }
     }
 }
