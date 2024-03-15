@@ -24,23 +24,49 @@ namespace BLL
         }
         public GameStoreResponse CreatePublisherService(Publisher p)
         {
-            //if (validation)
-            //{
+            TrimPublisher(p);
+            GameStoreResponse validation = this.ValidatePublisher(p);
+            if (validation.Success)
+            {
                 return publisherRepository.CreatePublisherRepository(p);
-            //}
-            return new GameStoreResponse("Create failed: Validation error");
+            }
+            validation.Message = "Create failed: " + validation.Message;
+            return validation;
         }
         public GameStoreResponse EditPublisherService(Publisher p)
         {
-            //if (validation)
-            //{
+            TrimPublisher(p);
+            GameStoreResponse validation = this.ValidatePublisher(p);
+            if (validation.Success)
+            {
                 return publisherRepository.EditPublisherRepository(p);
-            //}
-            return new GameStoreResponse("Edit failed: Validation error");
+            }
+            validation.Message = "Edit failed: " + validation.Message;
+            return validation;
         }
         public GameStoreResponse DeletePublisherService(int PublisherId)
         {
             return publisherRepository.DeletePublisherRepository(PublisherId);
+        }
+        /// <summary>
+        /// Removes extra whitespace around the edges of this object's properties
+        /// </summary>
+        private void TrimPublisher(Publisher p) {
+            p.PublisherName = p.PublisherName.Trim();
+            p.PublisherEmail = p.PublisherEmail.Trim();
+            p.PublisherDescription = p.PublisherDescription.Trim();
+        }
+        private GameStoreResponse ValidatePublisher(Publisher p)
+        {
+            if (p.PublisherName == "")
+            {
+                return new GameStoreResponse("Publisher name cannot be blank");
+            }
+            if (p.PublisherEmail == "")
+            {
+                return new GameStoreResponse("Publisher email cannot be blank");
+            }
+            return new GameStoreResponse();
         }
     }
 }
