@@ -14,6 +14,8 @@ namespace Entities.Entities
         public int GameId { get; set; }
         [ForeignKey("Publisher")]
         public int PublisherId { get; set; }
+        [ForeignKey("Platform")]
+        public int PlatformId { get; set; }
         [MaxLength(64)]
         public string GameName { get; set; }
         public string GameDescription { get; set; }

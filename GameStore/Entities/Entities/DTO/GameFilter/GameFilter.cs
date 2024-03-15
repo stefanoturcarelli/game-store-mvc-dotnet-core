@@ -11,6 +11,7 @@ namespace Entities.Entities.DTO.GameFilter
         //If these are manipulated to invalid ids then the filter will return nothing, which is expected behaviour.
         public int? GenreId { get; set; }
         public int? PublisherId { get; set; }
+        public int? PlatformId { get; set; }
         public string? SearchString { get; set; }
         public GameFilter() { }
 
@@ -23,6 +24,10 @@ namespace Entities.Entities.DTO.GameFilter
             if (this.PublisherId != null)
             {
                 games = games.Where(x => x.PublisherId == this.PublisherId);
+            }
+            if (this.PlatformId != null)
+            {
+                games = games.Where(x => x.PlatformId == this.PlatformId);
             }
             if (this.SearchString!=null)
             {
