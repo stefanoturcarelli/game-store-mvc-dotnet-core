@@ -17,5 +17,9 @@ namespace DAL
         {
             return gameStoreContext.Genres.ToList();
         }
+        public Genre? GetGenreByIdRepository(int GenreId)
+        {
+            return gameStoreContext.Genres.Where(x => x.GenreId == GenreId).FirstOrDefault();
+        }
     }
 }

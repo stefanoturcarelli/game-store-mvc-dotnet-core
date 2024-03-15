@@ -18,6 +18,10 @@ namespace DAL
         {
             return gameStoreContext.Games.ToList();
         }
+        public Game? GetGameByIdRepository(int GameId)
+        {
+            return gameStoreContext.Games.Where(x => x.GameId == GameId).FirstOrDefault();
+        }
 
         public List<Game> GetAllGamesByFilterRepository(IGameFilter gameFilter)
         {
