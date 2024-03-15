@@ -24,19 +24,25 @@ namespace BLL
         }
         public GameStoreResponse CreateGameService(Game g)
         {
-            //if (validation)
-            //{
+            this.TrimGame(g);
+            GameStoreResponse validation = this.ValidateGame(g);
+            if (validation.Success)
+            {
                 return gameRepository.CreateGameRepository(g);
-            //}
-            return new GameStoreResponse("Create failed: Validation error");
+            }
+            validation.Message = "Create failed: " + validation.Message;
+            return validation;
         }
         public GameStoreResponse EditGameService(Game g)
         {
-            //if (validation)
-            //{
+            this.TrimGame(g);
+            GameStoreResponse validation = this.ValidateGame(g);
+            if (validation.Success)
+            {
                 return gameRepository.EditGameRepository(g);
-            //}
-            return new GameStoreResponse("Edit failed: Validation error");
+            }
+            validation.Message = "Edit failed: " + validation.Message;
+            return validation;
         }
         public GameStoreResponse DeleteGameService(int GameId)
         {
@@ -47,6 +53,21 @@ namespace BLL
         {
             return gameRepository.GetAllGamesByFilterRepository(gameFilter);
         }
-
+        /// <summary>
+        /// Removes extra whitespace around the edges of this object's properties
+        /// </summary>
+        private void TrimGame(Game g)
+        {
+            g.GameName = g.GameName.Trim();
+            g.GameDescription = g.GameDescription.Trim();
+        }
+        private GameStoreResponse ValidateGame(Game g)
+        {
+            if (g.GameName == "")
+            {
+                return new GameStoreResponse("Game name cannot be blank");
+            }
+            return new GameStoreResponse();
+        }
     }
 }
