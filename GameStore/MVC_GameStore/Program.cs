@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MVC_GameStore.Data;
+using Entities.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
